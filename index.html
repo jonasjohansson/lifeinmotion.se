@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/aframe@latest"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script>
+      if (location.protocol != 'https:') {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="enter">
+      <button>
+        Enter
+      </button>
+    </div>
+    <a-scene cursor="rayOrigin: mouse">
+      <a-assets>
+        <video
+          id="vid1"
+          src="https://cdn.glitch.com/6fb9584c-7247-495e-ae46-971a495fef0e%2F360_VR%20Master%20Series%20_%20Free%20Download%20_%20Crystal%20Shower%20Falls.mp4"
+          muted
+        ></video>
+        <video
+          id="vid2"
+          src="https://cdn.glitch.com/6fb9584c-7247-495e-ae46-971a495fef0e%2F360_VR%20Master%20Series%20_%20Free%20Download%20_%20%20Pebbly%20Beach%20Headland.mp4"
+          muted
+        ></video>
+        <video
+          id="vid3"
+          src="https://cdn.glitch.com/6fb9584c-7247-495e-ae46-971a495fef0e%2F360_VR%20Master%20Series%20_%20Free%20Asset%20Download%20_%20%20Bavarian%20Alps%20Wimbachklamm.mp4"
+          muted
+        ></video>
+      </a-assets>
+
+      <a-sphere src="#vid1" radius="0.5" position="-1.5 1.6 -3"></a-sphere>
+      <a-sphere src="#vid2" radius="0.5" position="0 1.6 -3"></a-sphere>
+      <a-sphere src="#vid3" radius="0.5" position="1.5 1.6 -3"></a-sphere>
+
+      <a-videosphere src=""></a-videosphere>
+
+      <a-entity look-controls wasd-controls position="0 1.6 0" camera="fov: 90"></a-entity>
+    </a-scene>
+    <script src="app.js"></script>
+  </body>
+</html>
